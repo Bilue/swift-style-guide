@@ -189,6 +189,8 @@ let squares: [Int] = numbers.mao { (number: Int) -> Int in
 }
 ```
 
+_Rationale:_ Type annotations are redundant outside of appeasing the type system, as a variable's type can be checked at any time by holding ⌥ and clicking it
+
 
 #### Prefer structs over classes
 
