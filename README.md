@@ -15,7 +15,7 @@ then open a pull request. :zap:
 
 #### Whitespace
 
-* Spaces, not tabs. This should be specified in the `.xcodeproj`'s settings to override user preferences.
+* Spaces, not tabs. This should be specified in the `.xcodeproj`'s settings to override user preferences, which can be done by selecting the project navigator, and then modifying _Text Settings_ in the file inspector (⌘⌥1).
 * End files with a newline.
 * Make liberal use of vertical whitespace to divide code into logical chunks.
 * Don’t leave trailing whitespace.
