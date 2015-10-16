@@ -15,11 +15,10 @@ then open a pull request. :zap:
 
 #### Whitespace
 
- * Tabs, not spaces.
- * End files with a newline.
- * Make liberal use of vertical whitespace to divide code into logical chunks.
- * Don’t leave trailing whitespace.
-   * Not even leading indentation on blank lines.
+* Spaces, not tabs. This should be specified in the `.xcodeproj`'s settings to override user preferences.
+* End files with a newline.
+* Make liberal use of vertical whitespace to divide code into logical chunks.
+* Don’t leave trailing whitespace.
 
 
 #### Prefer `let`-bindings over `var`-bindings wherever possible
