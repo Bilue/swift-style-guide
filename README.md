@@ -172,6 +172,25 @@ extension History {
 
 _Rationale:_ This makes the capturing semantics of `self` stand out more in closures, and avoids verbosity elsewhere.
 
+#### Only use type annotations where type inference is insufficient
+
+Type annotations should be avoided in cases where the compiler can infer types itself:
+
+```swift
+// Good
+let squares = numbers.map { number in
+  return number * number
+}
+
+// Bad
+let squares: [Int] = numbers.mao { (number: Int) -> Int in
+  return number * number
+}
+```
+
+_Rationale:_ Type annotations are redundant outside of appeasing the type system, as a variable's type can be checked at any time by holding ⌥ and clicking it
+
+
 #### Prefer structs over classes
 
 Unless you require functionality that can only be provided by a class (like identity or deinitializers), implement a struct instead.
