@@ -15,11 +15,10 @@ then open a pull request. :zap:
 
 #### Whitespace
 
- * Tabs, not spaces.
- * End files with a newline.
- * Make liberal use of vertical whitespace to divide code into logical chunks.
- * Don’t leave trailing whitespace.
-   * Not even leading indentation on blank lines.
+* Spaces, not tabs. This should be specified in the `.xcodeproj`'s settings to override user preferences, which can be done by selecting the project navigator, and then modifying _Text Settings_ in the file inspector (⌘⌥1).
+* End files with a newline.
+* Make liberal use of vertical whitespace to divide code into logical chunks.
+* Don’t leave trailing whitespace.
 
 
 #### Prefer `let`-bindings over `var`-bindings wherever possible
@@ -279,3 +278,4 @@ func <|< <A>(lhs: A, rhs: A) -> A
 ```
 
 _Rationale:_ Operators consist of punctuation characters, which can make them difficult to read when immediately followed by the punctuation for a type or value parameter list. Adding whitespace separates the two more clearly.
+
