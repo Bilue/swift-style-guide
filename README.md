@@ -247,7 +247,7 @@ struct Car: Vehicle {
 }
 ```
 
-_Rationale:_ Value types are simpler, easier to reason about, and behave as expected with the `let` keyword.
+_Rationale:_ Value types are simpler, easier to reason about, and behave as expected with the `let` keyword. Using protocols supports encapsulation, reduces tight coupling and seperates concerns.  
 
 #### Make classes `final` by default
 
