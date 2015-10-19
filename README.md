@@ -197,7 +197,7 @@ Unless you require functionality that can only be provided by a class (like iden
 
 Note that inheritance is (by itself) usually _not_ a good reason to use classes, because polymorphism can be provided by protocols, and implementation reuse can be provided through composition.
 
-This idea can be generalised and empahised as: Prefer protocols to inheritence and value types to reference types.
+This idea can be generalized and emphasized as: Prefer protocols to inheritance and value types to reference types.
 
 For example, this class hierarchy:
 
@@ -247,7 +247,7 @@ struct Car: Vehicle {
 }
 ```
 
-_Rationale:_ Value types are simpler, easier to reason about, and behave as expected with the `let` keyword. Using protocols supports encapsulation, reduces tight coupling and seperates concerns.  
+_Rationale:_ Value types are simpler, easier to reason about, and behave as expected with the `let` keyword. Using protocols supports encapsulation, reduces tight coupling and separates concerns.  
 
 #### Make classes `final` by default
 
@@ -299,4 +299,3 @@ func <|< <A>(lhs: A, rhs: A) -> A
 ```
 
 _Rationale:_ Operators consist of punctuation characters, which can make them difficult to read when immediately followed by the punctuation for a type or value parameter list. Adding whitespace separates the two more clearly.
-
