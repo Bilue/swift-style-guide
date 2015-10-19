@@ -62,7 +62,7 @@ Where possible, use `let foo: FooType?` instead of `let foo: FooType!` if `foo` 
 
 _Rationale:_ Explicit optionals result in safer code. Implicitly unwrapped optionals have the potential of crashing at runtime.
 
-#### If a method has no side effects and doesn’t take parameters, considermaking it a computed property
+#### If a method has no side effects and doesn’t take parameters, consider making it a computed property
 
 For a particular class of method, specifically pure functions that don't take parameters, it makes more sense to express these as properties
 
