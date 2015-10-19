@@ -197,6 +197,8 @@ Unless you require functionality that can only be provided by a class (like iden
 
 Note that inheritance is (by itself) usually _not_ a good reason to use classes, because polymorphism can be provided by protocols, and implementation reuse can be provided through composition.
 
+This idea can be generalised and empahised as: Prefer protocols to inheritence and value types to reference types.
+
 For example, this class hierarchy:
 
 ```swift
