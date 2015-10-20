@@ -19,6 +19,7 @@ then open a pull request. :zap:
 * End files with a newline.
 * Make liberal use of vertical whitespace to divide code into logical chunks.
 * Don’t leave trailing whitespace.
+* Opening braces should be on the same line as their associated `if` statement / function definition / etc.
 
 
 #### Prefer `let`-bindings over `var`-bindings wherever possible
