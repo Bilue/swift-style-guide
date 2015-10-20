@@ -62,6 +62,41 @@ Where possible, use `let foo: FooType?` instead of `let foo: FooType!` if `foo` 
 
 _Rationale:_ Explicit optionals result in safer code. Implicitly unwrapped optionals have the potential of crashing at runtime.
 
+#### If a method has no side effects and doesn’t take parameters, consider making it a computed property
+
+For a particular class of method, specifically pure functions that don't take parameters, it makes more sense to express these as properties
+
+Take this example `Person` type:
+
+```swift
+struct Person {
+  let firstName: String
+  let lastName: String
+}
+```
+
+Now we could define `fullName` as a function that takes no parameters and returns a `String` like so:
+
+```swift
+extension Person {
+  func fullName() -> String {
+    return "\(firstName) \(lastName)"
+  }
+}
+```
+
+But in this example, the computation being done is trivial, there are no side effects, and no inputs. We can say that these characteristics fulfill the _property contract_ and it would make more sense to express this function as a computed property:
+
+```swift
+extension Person {
+  var fullName: String {
+    return "\(firstName) \(lastName)"
+  }
+}
+```
+
+_Rationale:_ Computed properties make it clear to developers that calling them will involve no side-effects, making it easier to reason about code's behaviour
+
 #### Prefer implicit getters on read-only properties and subscripts
 
 When possible, omit the `get` keyword on read-only computed properties and
