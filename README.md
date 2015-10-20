@@ -249,6 +249,48 @@ struct Car: Vehicle {
 
 _Rationale:_ Value types are simpler, easier to reason about, and behave as expected with the `let` keyword. Using protocols supports encapsulation, reduces tight coupling and separates concerns.  
 
+#### Avoid using `default` when switching on `enum` types
+
+When writing `switch` statements that deal with `enum` types, it's preferable to explicitly handle every possible case instead of falling back on `default`.
+
+Consider the example enum `ButtonStyle`:
+
+```swift
+enum ButtonStyle {
+    case Default
+    case Primary
+    case Danger
+}
+```
+
+Let's pretend we're using this enum to style a `UIButton` instance, part of that code might look like this:
+
+```swift
+switch buttonStyle {
+case .Primary:
+    button.tintColor = UIColor.primaryButtonColor
+case .Danger:
+     button.tintColor = UIColor.dangerColor
+default:
+    break
+}
+```
+
+This works great for now, but if we were to add another kind of `ButtonStyle` in the future, we'd have to manually go hunt through our codebase and find every one of these `switch` statements so we can handle that new case. It's preferable to write this switch statement the following way instead:
+
+```swift
+switch buttonStyle {
+case .Primary:
+    button.tintColor = UIColor.primaryButtonColor
+case .Danger:
+     button.tintColor = UIColor.dangerColor
+case .Default:
+    break
+}
+```
+
+_Rationale:_ Explicitly handling every possible case means we'll see compiler errors if we ever introduce a new one, helping us ensure that the new case is handled properly throughout our codebase
+
 #### Make classes `final` by default
 
 Classes should start as `final`, and only be changed to allow subclassing if a valid need for inheritance has been identified. Even in that case, as many definitions as possible _within_ the class should be `final` as well, following the same rules.
