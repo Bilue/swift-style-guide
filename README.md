@@ -4,9 +4,9 @@ This is an attempt to encourage patterns that accomplish the following goals (in
 rough priority order):
 
  1. Increased rigor, and decreased likelihood of programmer error
- 1. Increased clarity of intent
- 1. Reduced verbosity
- 1. Fewer debates about aesthetics
+ 2. Increased clarity of intent
+ 3. Reduced verbosity
+ 4. Fewer debates about aesthetics
 
 If you have suggestions, please see our [contribution guidelines](CONTRIBUTING.md),
 then open a pull request. :zap:
@@ -183,7 +183,7 @@ let squares = numbers.map { number in
 }
 
 // Bad
-let squares: [Int] = numbers.mao { (number: Int) -> Int in
+let squares: [Int] = numbers.map { (number: Int) -> Int in
   return number * number
 }
 ```
